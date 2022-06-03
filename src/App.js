@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React,{useState, useEffect} from 'react';
 import './App.css';
+import MovieList from './MovieList';
+import MovieDetails from './MovieDetails'
+import MoviesData from './movie-data.json';
+
+
 
 function App() {
+  
+  const movieNames = MoviesData;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div class="row">
+
+          <div class="col-md-6 col-sm-12">
+            <MovieDetails movieNames={movieNames} />
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <h1>Hello</h1>
+            <MovieList movieNames={movieNames}/>
+          </div>
+          
+        </div>      
     </div>
   );
 }
