@@ -37,11 +37,25 @@
   }
 }
 
-
+.Main {
+  background-color: yellow;
+  width: 100%;
+  padding: 10px 0 20px;
+}
 .listMovie button {
   width: auto;
   height: auto;
   line-height: 2em;
   font-size: 18px;
   margin: 10px 0;
+}
+
+.Header {
+  text-align: center;
+  padding: 40px 0;
+  text-transform: uppercase;
+  text-decoration:underline;
+}
+.MovieDatails {
+  padding-top: 20px;
 }

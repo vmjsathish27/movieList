@@ -1,7 +1,6 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import MovieList from './MovieList';
-import MovieDetails from './MovieDetails'
 import MoviesData from './movie-data.json';
 
 
@@ -12,13 +11,8 @@ function App() {
   
   return (
     <div className="container">
-      <div class="row">
-
-          <div class="col-md-6 col-sm-12">
-            <MovieDetails movieNames={movieNames} />
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <h1>Hello</h1>
+      <div class="row">        
+          <div class="col-md-12">
             <MovieList movieNames={movieNames}/>
           </div>
           

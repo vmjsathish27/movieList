@@ -1,30 +1,21 @@
-import React from 'react'
+import React from 'react';
+import './App.css'
 
-function MovieDetails({movieNames}) {
-    // const posterUrl = movieNames.map(items=>items.poster);
+function MovieDetails(props) {
   return (
-    <div>
-        {movieNames.map(items=>{
-            return(
-                <div>
-                    <img src={items.poster} alt=""/>
-                    <div>
-                        <strong>{items.title} (<span>{items.year}</span>)</strong>                        
-                    </div>
-                    <div>
-                        <p>
-                            <strong>Director:</strong> {items.director}<br/>
-                            <strong>Casts:</strong> {items.casts}<br/>
-                            <strong>Genre:</strong> {items.genre}
-                        </p>
-                    </div>
-                </div>
-            )
-            
-        })}
-        
+    <div className='MovieDatails'>
+        <div>
+            <strong>{props.title} (<span>{props.year}</span>)</strong>                        
+        </div>
+        <div>
+            <p>
+                <strong>Director:</strong> {props.director}<br/>
+                <strong>Casts:</strong> {props.casts}<br/>
+                <strong>Genre:</strong> {props.genre}
+            </p>
+        </div>
     </div>
   )
 }
 
-export default MovieDetails
+export default MovieDetails;
