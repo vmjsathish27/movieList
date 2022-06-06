@@ -11,19 +11,16 @@ function MovieList({movieNames}) {
     const [director, setDirector] = useState('');
     const [casts, setCast] = useState('');
     const [genre, setGenre] = useState('');
-  const handleClick = (e) => {
-    setTitle(e.title);
-    setYear(e.year);
-    setPoster(e.poster);
-    setDirector(e.director);
-    setCast(e.casts);
-    setGenre(e.genre);
+    // const [active, setActive] = useState(true);
+  const handleClick = (items) => {
+    setTitle(items.title);
+    setYear(items.year);
+    setPoster(items.poster);
+    setDirector(items.director);
+    setCast(items.casts);
+    setGenre(items.genre);
+    // setActive(!active)
   }
-
-  // const buttonStyle = {
-  //   backgroundColor : index ?'red' : 'black',
-  // }
-
   return (
     
     <div className="Main">
@@ -50,10 +47,16 @@ function MovieList({movieNames}) {
             </div>
             <div className="col-md-6 col-sm-12">
               <div className="MovieCategory">
-                  {movieNames && movieNames.map(items=>{
+                  {movieNames && movieNames.map((items, index)=>{
                       return (
                           <div className='listMovie' key={items.id}>                    
-                              <button onClick={()=>handleClick(items)}>{items.title}</button>
+                              <button 
+                              onClick={()=>handleClick(items)}
+                              // className={active === items ? active : ''}
+                              // key={index}
+                              >
+                                {items.title}
+                              </button>
                           </div>
                       )
                   })}        
